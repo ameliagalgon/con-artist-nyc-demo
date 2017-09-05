@@ -1,0 +1,19 @@
+.container{
+    width: 70%;
+    height: auto;
+}
+.post{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    padding: 10px;
+}
+
+.post .header{
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.post .full-content{
+    display: none;
+}

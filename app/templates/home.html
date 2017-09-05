@@ -1,4 +1,14 @@
 <div class="home-view">
-    <h1>Hello world</h1>
-    <div class="post">{{home.posts}}</div>
+    <div class="container">
+        <div class="post" ng-repeat="post in home.posts.publicPosts track by $index" ng-click="home.posts.togglePost($event)">
+            <div class="preview" ng-show="!post.expanded">
+                <div class="header">{{post.header}}</div>
+                <div class="content">{{post.brief}}</div>
+            </div>
+            <div class="full-content">
+                <div class="header">{{post.header}}</div>
+                <div class="content">{{post.content}}</div>
+            </div>
+        </div>
+    </div>
 </div>

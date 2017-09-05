@@ -1,7 +1,7 @@
 (function(){
     function HomeCtrl(Post){
-        this.posts = Post
-        console.log(this.posts.publicPosts);
+        this.posts = Post;
+        console.log(this.posts);
     };
 
     angular
