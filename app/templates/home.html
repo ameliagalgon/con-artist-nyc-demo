@@ -1,30 +1,30 @@
 <div class="home-view">
     <div class="container">
         <div ng-repeat="post in home.posts.publicPosts track by $index" ng-if="$index % 3 == 0" class="row">
-            <div class="post" ng-click="home.posts.togglePost($event)" id="{{post.$id}}">
+            <div class="post" ng-click="home.posts.togglePost($event)" id="{{post.$id}}" style="background: url({{home.posts.publicPosts[$index].image}}) no-repeat center; background-size: cover">
                 <div class="preview">
                     <div class="header">{{home.posts.publicPosts[$index].header}}</div>
-                    <div class="content">{{home.posts.publicPosts[$index].brief}}</div>
+                    <!--<div class="content">{{home.posts.publicPosts[$index].brief}}</div>-->
                 </div>
                 <div class="full-content">
                     <div class="header">{{home.posts.publicPosts[$index].header}}</div>
                     <div class="content">{{home.posts.publicPosts[$index].content}}</div>
                 </div>
             </div>
-            <div class="post" ng-click="home.posts.togglePost($event)" ng-if="home.posts.publicPosts.length > ($index + 1)" id="{{post.$id}}">
+            <div class="post" ng-click="home.posts.togglePost($event)" ng-if="home.posts.publicPosts.length > ($index + 1)" id="{{post.$id}}" style="background: url({{home.posts.publicPosts[$index + 1].image}}) no-repeat center; background-size: cover">
                 <div class="preview">
                     <div class="header">{{home.posts.publicPosts[$index + 1].header}}</div>
-                    <div class="content">{{home.posts.publicPosts[$index + 1].brief}}</div>
+                    <!--<div class="content">{{home.posts.publicPosts[$index + 1].brief}}</div>-->
                 </div>
                 <div class="full-content">
                     <div class="header">{{home.posts.publicPosts[$index + 1].header}}</div>
                     <div class="content">{{home.posts.publicPosts[$index + 1].content}}</div>
                 </div>
             </div>
-            <div class="post" ng-click="home.posts.togglePost($event)" ng-if="home.posts.publicPosts.length > ($index + 2)" id="{{post.$id}}">
+            <div class="post" ng-click="home.posts.togglePost($event)" ng-if="home.posts.publicPosts.length > ($index + 2)" id="{{post.$id}}" style="background: url({{home.posts.publicPosts[$index + 2].image}}) no-repeat center; background-size: cover">
                 <div class="preview">
                     <div class="header">{{home.posts.publicPosts[$index + 2].header}}</div>
-                    <div class="content">{{home.posts.publicPosts[$index + 2].brief}}</div>
+                    <!--<div class="content">{{home.posts.publicPosts[$index + 2].brief}}</div>-->
                 </div>
                 <div class="full-content">
                     <div class="header">{{home.posts.publicPosts[$index + 2].header}}</div>
@@ -32,13 +32,5 @@
                 </div>
             </div>
         </div>
-
-        <!--
-        <div ng-repeat="product in products" ng-if="$index % 3 == 0" class="row">
-            <div class="col-xs-4">{{products[$index]}}</div>
-            <div class="col-xs-4" ng-if="products.length > ($index + 1)">{{products[$index + 1]}}</div>
-            <div class="col-xs-4" ng-if="products.length > ($index + 2)">{{products[$index + 2]}}</div>
-        </div>
-        -->
     </div>
 </div>
