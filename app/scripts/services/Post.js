@@ -3,40 +3,25 @@
 
         var Post = {};
 
+        var db = firebase.database();
         var ref = firebase.database().ref().child("posts").child("public");
         Post.publicPosts = $firebaseArray(ref);
 
         Post.expanded = false;
 
-        Post.togglePost = function($event){
-            //console.log("toggle");
-            //console.log(event.target.parent(".post"));
-
-            if(Post.expanded === false){
-                Post.expand($(event.target).parent('.post'));
-                Post.expanded = true;
-            } else{
-                Post.collapse($(event.target).parent('.post'));
-                Post.expanded = false;
-            }
-        };
-
-
-        Post.expand = function(post){
+        Post.togglePost = function(post){
             console.log(post);
 
-            console.log("expand");
-            //console.log($event.target);
-            post.find('.preview').css("display","none");
-            post.find('.full-content').css("display","block");
-            //document.getElementByClass().style.property
-            console.log(post.find('.preview'));
-        };
+            var element = $(document.getElementById(post.$id));
 
-        Post.collapse = function(post){
-            console.log("collapse");
-            post.find('.preview').css("display","block");
-            post.find('.full-content').css("display","none");
+            if(element.hasClass("expanded")){
+                element.find('.preview').css("display","block");
+                element.find('.full-content').css("display","none");
+            } else{
+                element.find('.preview').css("display","none");
+                element.find('.full-content').css("display","block");
+            }
+            element.toggleClass("expanded");
         };
 
         return Post

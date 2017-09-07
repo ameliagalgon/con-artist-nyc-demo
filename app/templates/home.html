@@ -1,7 +1,7 @@
 <div class="home-view">
     <div class="container">
-        <div class="post" ng-repeat="post in home.posts.publicPosts track by $index" ng-click="home.posts.togglePost($event)">
-            <div class="preview" ng-show="!post.expanded">
+        <div class="post" ng-repeat="post in home.posts.publicPosts track by $index" ng-click="home.posts.togglePost(post)" id="{{post.$id}}">
+            <div class="preview">
                 <div class="header">{{post.header}}</div>
                 <div class="content">{{post.brief}}</div>
             </div>
