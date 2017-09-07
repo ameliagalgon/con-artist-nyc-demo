@@ -29,7 +29,7 @@
 .expanded{
     /*width: 100%;*/
     /*height: 400px;*/
-    /*order: -1;*/
+    order: -1;
     animation: expanding 1.0s forwards;
     -webkit-animation: expanding 1.0s forwards; /* for less modern browsers */
 }
@@ -37,5 +37,5 @@
 /* The animation code */
 @keyframes expanding {
     0%   {overflow: hidden;}
-    100% {width:100%; height:400px; overflow: auto; order: 1}
+    100% {width:100%; height:400px; overflow: auto;}
 }
