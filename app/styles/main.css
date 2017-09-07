@@ -1,13 +1,15 @@
 .container{
     width: 70%;
     height: auto;
+    margin: auto;
+}
+.container .row{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: auto;
 }
 .post{
-    width: 30%;
+    width: 28%;
     height: 200px;
     background-color: pink;
     padding: 10px;
@@ -25,7 +27,15 @@
 }
 
 .expanded{
-    width: 100%;
-    height: 200px;
-    order: -1;
+    /*width: 100%;*/
+    /*height: 400px;*/
+    /*order: -1;*/
+    animation: expanding 1.0s forwards;
+    -webkit-animation: expanding 1.0s forwards; /* for less modern browsers */
+}
+
+/* The animation code */
+@keyframes expanding {
+    0%   {overflow: hidden;}
+    100% {width:100%; height:400px; overflow: auto; order: 1}
 }

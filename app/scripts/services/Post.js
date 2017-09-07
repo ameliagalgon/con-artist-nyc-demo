@@ -9,8 +9,9 @@
 
         Post.expanded = false;
 
-        Post.togglePost = function(post){
-            var element = $(document.getElementById(post.$id));
+        Post.togglePost = function($event){
+            console.log($event.target);
+            var element = $(event.target).closest('.post');
 
             if(element.hasClass("expanded")){
                 element.find('.preview').css("display","block");
