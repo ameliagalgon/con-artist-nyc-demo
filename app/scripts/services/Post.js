@@ -11,7 +11,7 @@
 
         Post.showPopup = function($event){
             var element = $(event.target).closest('.item');
-            console.log(element);
+            //console.log(element);
             $(".popup").css("display","block");
             if ($(".popup").hasClass('expanded-item')){
                 $(".popup-content").html(element.find('.full-content').html());
@@ -21,26 +21,6 @@
                     $(".popup-content").html(element.find('.full-content').html());
                 }, 500);
             }
-            /*
-            if(element.hasClass("expanded")){
-                element.find('.preview').css("display","block");
-                element.find('.full-content').css("display","none");
-            } else{
-                var expandedElements = $('.expanded');
-                //console.log(expandedElements);
-                if(expandedElements.length > 0){
-                    $.each(expandedElements, function(){
-                        $(this).removeClass("expanded");
-                        $(this).find('.preview').css("display","block");
-                        $(this).find('.full-content').css("display","none");
-                    });
-                }
-
-                element.find('.preview').css("display","none");
-                element.find('.full-content').css("display","block");
-
-            }
-            */
         };
 
         Post.closePopup = function(){
