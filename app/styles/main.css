@@ -2,6 +2,9 @@ body{
     font-family: sans-serif;
 }
 
+.home-view{
+    position: relative;
+}
 .container{
     width: 90%;
     height: auto;
@@ -14,7 +17,7 @@ body{
 }
 .post{
     width: 28%;
-    height: 200px;
+    height: 800px;
     background-color: pink;
     padding: 10px;
     margin-right: 2%;
@@ -43,6 +46,14 @@ body{
     order: -1;
     animation: expanding 1.0s forwards;
     -webkit-animation: expanding 1.0s forwards; /* for less modern browsers */
+}
+
+.popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 /**** scrollbar ******/

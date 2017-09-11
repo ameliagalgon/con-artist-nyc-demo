@@ -13,6 +13,7 @@
             console.log($event.target);
             var element = $(event.target).closest('.post');
 
+            /*
             if(element.hasClass("expanded")){
                 element.find('.preview').css("display","block");
                 element.find('.full-content').css("display","none");
@@ -29,7 +30,9 @@
 
                 element.find('.preview').css("display","none");
                 element.find('.full-content').css("display","block");
+
             }
+            */
             //find other divs with the expanded class
 
             element.toggleClass("expanded");
