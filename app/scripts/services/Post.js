@@ -7,12 +7,16 @@
         var ref = firebase.database().ref().child("posts").child("public");
         Post.publicPosts = $firebaseArray(ref);
 
-        Post.expanded = false;
+        //Post.expanded = false;
 
-        Post.togglePost = function($event){
-            console.log($event.target);
-            var element = $(event.target).closest('.post');
-
+        Post.showPopup = function($event){
+            var element = $(event.target).closest('.item');
+            console.log(element);
+            $(".popup").css("display","block");
+            $(".popup").addClass('expanded-item');
+            setTimeout(function(){
+                $(".popup-content").html(element.find('.full-content').html());
+            }, 500);
             /*
             if(element.hasClass("expanded")){
                 element.find('.preview').css("display","block");
@@ -33,9 +37,13 @@
 
             }
             */
-            //find other divs with the expanded class
+        };
 
-            element.toggleClass("expanded");
+        Post.closePopup = function(){
+            console.log("close popup");
+            $('.popup-content').html("");
+            $('.popup').css("display", "none");
+            $(".popup").removeClass("expanded-item");
         };
 
         return Post

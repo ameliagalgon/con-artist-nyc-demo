@@ -1,14 +1,24 @@
 <div class="home-view">
+    <div class="popup">
+        <div class="popup-header">
+            <span class="ion-close" ng-click="home.posts.closePopup()"></span>
+        </div>
+        <div class="popup-content"></div>
+    </div>
     <div class="masonry">
-       <div ng-repeat="item in home.posts.publicPosts" class="item" id="{{item.$id}}">
+       <div ng-repeat="item in home.posts.publicPosts" class="item" id="{{item.$id}}" ng-click="home.posts.showPopup($event)">
             <div class="preview">
-                <div class="header">{{home.posts.publicPosts[$index].header}}</div>
-                <!--<div class="content">{{home.posts.publicPosts[$index].brief}}</div>-->
+                <div class="image"><img src="{{item.image}}" /></div>
+                <div class="header">{{item.header}}</div>
+                <div class="content">{{item.brief}}</div>
             </div>
+
             <div class="full-content">
-                <div class="header">{{home.posts.publicPosts[$index].header}}</div>
-                <div class="content">{{home.posts.publicPosts[$index].content}}</div>
+                <div class="image"><img src="{{item.image}}" /></div>
+                <div class="header">{{item.header}}</div>
+                <div class="content">{{item.content}}</div>
             </div>
+
        </div>
     </div>
 </div>
