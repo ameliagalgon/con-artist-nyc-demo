@@ -13,10 +13,14 @@
             var element = $(event.target).closest('.item');
             console.log(element);
             $(".popup").css("display","block");
-            $(".popup").addClass('expanded-item');
-            setTimeout(function(){
+            if ($(".popup").hasClass('expanded-item')){
                 $(".popup-content").html(element.find('.full-content').html());
-            }, 500);
+            } else{
+                $(".popup").addClass('expanded-item');
+                setTimeout(function(){
+                    $(".popup-content").html(element.find('.full-content').html());
+                }, 500);
+            }
             /*
             if(element.hasClass("expanded")){
                 element.find('.preview').css("display","block");
